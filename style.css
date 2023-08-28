@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+:root{
+    --primary-color:#0652DD;
+    --white-color:#ffffff;
+    --border-color:#dce8e5;
+    --light-color:#f5f6fa;
+    --gray-color:#7f8fa6;
+    --dark-color:#353b48;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Rubik',sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+ul{list-style:none;}
+h1,h2,h3,h4{
+    font-weight: 500;
+    line-height: normal;
+}
+
+h1{font-size:2em;}
+h2{font-size:1.75em;}
+h3{font-size:1em;}
+h4{font-size:1em;}
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.logo a{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 0;
+    display: block;
+    width:fit-content;
+}
+
+.top{
+    margin-bottom: 50px;
+    background-color: var(--light-color);
+}
+
+.top ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.top ul li{
+    display: flex;
+    align-items: center;
+    color: #44bd32;
+    line-height: 1;
+    gap:7px;
+}
+
+.top ul li.active{
+    color: var(--dark-color);
+}
+
+.top ul li.active ~li{
+    color: var(--gray-color);
+}
+.top ul li i{
+    font-size:18px ;
+}
+
+.top ul li.active i{
+    color: var(--primary-color);
+}
+
+
+form .form-child{
+    display: none;
+}
+
+form .form-child.active{
+    display: block;
+}
+
+
+form h2{
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+form .field .wrapper{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+}
+
+form .faculty{
+    position:relative;
+    padding-left: 60px;
+    font-size: 13px;
+}
+
+form .faculty h3{
+    margin: 15px 0;
+}
+
+form .faculty .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--light-color);
+    border-radius: 50%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+form .faculty .icon::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(15px);
+}
+
+form .faculty:nth-child(1) .icon::before{
+    background-color:#12cbc4 ;
+}
+
+form .faculty:nth-child(2) .icon::before{
+    background-color:#b53471 ;
+}
+
+form .faculty:nth-child(3) .icon::before{
+    background-color:#9980FA ;
+}
+
+form .faculty:nth-child(4) .icon::before{
+    background-color:#EE5A24 ;
+}
+
+form .faculty:nth-child(5) .icon::before{
+    background-color:#a7e237 ;
+}
+
+form .faculty ul{
+    line-height: 2;
+}
+
+form .faculty ul li{
+    position: relative;
+}
+
+form .field .wrapper input{
+    width: 0;
+    min-width: 0;
+    height: 0;
+}
+
+form .field .wrapper label{
+    padding-left:15px;
+    cursor: pointer;   
+}
+
+form .field .wrapper label::before{
+    content: '';
+    position: absolute;
+    display: block;
+    top:calc((26px /2) - 8px);
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--light-color);
+    border: 1px solid var(--gray-color);
+    border-radius: 50%;
+}
+
+form .field .wrapper input:checked ~ label::before{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: rgb(0 0 0 /35%) 0 3px 6px;
+}
+
+form nav{
+    text-align: right;
+    padding: 30px 0;
+}
+
+form nav a{
+    font-size: 12px;
+    display: inline-flex;
+    padding: 4px 20px;
+    margin-left: 10px;
+    border: 1px solid transparent;
+}
+
+form nav :where(.next, .submit){
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+form nav .prev{
+    border-color: var(--gray-color);
+}
+
+form .split{
+    display:flex ;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap:20px;
+}
+
+
+
+/*heightlight*/
+
+.highlight .head{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.highlight .thumbnail{
+    width:100px;
+    height: 100px;
+    margin: 0 20px 20px;
+    border-radius: 50%;
+    background-color: var(--light-color);
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.highlight .thumbnail img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.highlight .head span{
+    color:var(--gray-color);
+}
+
+.highlight .head h4{
+    font-size: 18px;
+}
+
+.highlight .head .devider{
+    height: 40px;
+    width: 1px;
+    background-color: var(--border-color);
+    transform: rotate(25deg);
+}
+
+.highlight .wrapper{
+    padding-top: 20px;
+    margin-top:20px;
+    border-top: 1px solid var(--light-color);
+}
+
+.highlight .wrapper h4{
+    color: var(--gray-color);
+    margin-bottom: 50px;
+}
+
+.highlight .field-selected{
+    display: flex;
+    flex-wrap: wrap;
+    gap:50px;
+    margin-bottom: 50px;
+}
+
+.highlight .faculty .icon{
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+}
+
+.highlight .faculty h3{
+    margin: 0;
+}
+
+.form-child.active ~ .wrapper > .highlight{
+    display: none;
+}
+
+.field.active ~ nav :where(.prev, .submit),
+.field ~ .wrapper .profile.active ~ nav .submit{
+    display:none;
+}
+/* form */
+form .profile .heading{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    line-height: normal;
+    margin-bottom: 30px;
+}
+form:where(.profile, .story) .heading{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    line-height: normal;
+    margin-bottom: 30px;
+}
+
+form :where(.profile, .story) .heading .icon{
+    width:40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    border-radius: 50%;
+}
+
+form .personal .upload p input{
+    height: auto;
+    cursor: pointer;
+    color: var(--gray-color);
+}
+
+form .personal .upload p input::-webkit-file-upload-button{
+    color: var(--light-color);
+    padding: 5px 10px;
+    background-color: var(--dark-color);
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+form .personal .upload p input:hover::-webkit-file-upload-button{
+    background-color: var(--primary-color);
+}
+
+input,select, textarea{
+    font:inherit;
+    padding: 12px 20px;
+    height: 42px;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    outline: 0;
+    font-size: 13px;
+    min-width: 212px;
+    width: 100%;
+    transition: border .3s;
+}
+
+.check{
+    height:15px;
+}
+
+:where(input,select,textarea):focus{
+    border-color: var(--gray-color);
+}
+
+input ~ input{
+    margin-top: 20px;
+}
+
+input::placeholder,select{
+    font-family: 'Rubik';
+    color: var(--gray-color);
+}
+
+form .row >:where(.split,p){
+    margin-bottom: 20px;
+}
+
+form p{
+    display: flex;
+    flex-direction: column;
+}
+
+form p label{
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+select{
+    appearance: none;
+}
+
+form .custom-select{
+    position: relative;
+    line-height: normal;
+}
+
+form .custom-select i{
+    position: absolute;
+    top:15px;
+    right:20px;
+}
+
+form .birth input{
+    min-width: 80px;
+}
+
+
+#check{
+    height:15px;
+    width:15px;
+    min-width: 0px;
+
+}
+
+#gen{
+    height: 15px;
+    min-width: 0px;
+    width:15px;
+}
+
+#genleb{
+    margin-bottom: -3px;
+    margin-left: -15px;
+    color: var(--gray-color);
+}
+
+a{
+    text-decoration: dashed;
+    color: var(--primary-color);
+}
+
+
+
+        /* Style list items */
+         #term{
+            
+            font-size: 16px;
+            margin-bottom: 10px;
+            list-style-type: disc;
+        }
+        #term b{
+            color: red;
+            font-size: 16px;
+            margin-bottom: 10px;
+            list-style-type: disc;
+        }
+        #require{
+            color: red;
+            font-size:20px;
+        }
+  
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin:0;
+}
+
+form .profile .row:not(:last-child){
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* for firefox*/
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
+
+
+
+@media screen and (min-width:768px){
+    .highlight{
+        padding-top: 30px;
+        margin-top: 100px;
+        border-top: 1px solid var(--border-color);
+    }
+    form >.wrapper{
+        display: grid;
+        grid-gap: 50px;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    } 
+    form .personal > *:not(.heading){
+        padding-left: 50px;
+    }
+    
+}
